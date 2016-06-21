@@ -16,13 +16,18 @@ gem 'puma', '~> 3.0'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
+# gem 'bower-rails'
+gem 'angular-rails-templates'
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem 'rack-cors'
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-instagram'
 gem 'figaro'
+# gem 'turbolinks'
+gem 'sass-rails'
+gem 'uglifier'
+gem 'coffee-rails'
 
 group :test do
   gem 'webmock'
@@ -30,6 +35,8 @@ group :test do
   gem 'rspec-collection_matchers'
   gem 'webmock'
 end
+
+gem 'sprockets'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -46,6 +53,6 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
-
+#
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

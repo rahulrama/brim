@@ -20,3 +20,7 @@
 /config/application.yml
 
 /coverage/*
+node_modules/
+app/assets/bower_components
+coverage/
+.DS_Store

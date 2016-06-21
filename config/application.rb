@@ -9,7 +9,7 @@ require "action_controller/railtie"
 require "action_mailer/railtie"
 require "action_view/railtie"
 require "action_cable/engine"
-# require "sprockets/railtie"
+require "sprockets/railtie"
 # require "rails/test_unit/railtie"
 
 # Require the gems listed in Gemfile, including any gems
@@ -28,6 +28,11 @@ module BrimServer
         'Access-Control-Allow-Origin' => 'http://localhost:8000',
         'Access-Control-Request-Method' => %w{GET POST OPTIONS}.join(",")
       }
+
+  config.assets.paths << Rails.root.join("node_modules")
+  config.assets.paths << Rails.root.join("app", "assets")
+  config.assets.paths << Rails.root.join("app","assets", "bower_components")
+
 
   config.middleware.insert_before 0, Rack::Cors do
      allow do
