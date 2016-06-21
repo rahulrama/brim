@@ -1,4 +1,4 @@
-var brimApp = angular.module("brimApp", ["ngMap", "ngMessages", 'ui.router', 'satellizer'])
+var brimApp = angular.module("brimApp", ["templates", "ngMessages", "ui.router", "satellizer"])
 
 .config(function($stateProvider,
                  $urlRouterProvider,
@@ -11,22 +11,22 @@ var brimApp = angular.module("brimApp", ["ngMap", "ngMessages", 'ui.router', 'sa
     // redirectUri: 'http://localhost:3000/users/auth/instagram/callback'
   })
 
-  $urlRouterProvider.otherwise("/home");
+  $urlRouterProvider.otherwise("/");
 
   $stateProvider
     .state('home', {
       url: "/",
-      templateUrl: "../partials/home.html",
+      templateUrl: "home.html",
       controller: "HomeController"
     })
     .state('login', {
       url: "/login",
-      templateUrl: "../partials/login.html",
+      templateUrl: "/partials/login.html",
       controller: 'AuthController as auth'
     })
     .state('dashboard', {
       url: "/dashboard",
-      templateUrl: "../partials/dashboard.html",
+      templateUrl: "/partials/dashboard.html",
       controller: 'brimAppController as ctrl'
     });
 })

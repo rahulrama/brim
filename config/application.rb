@@ -32,7 +32,9 @@ module BrimServer
   config.assets.paths << Rails.root.join("node_modules")
   config.assets.paths << Rails.root.join("app", "assets")
   config.assets.paths << Rails.root.join("app","assets", "bower_components")
-
+  config.assets.paths << Rails.root.join("app","assets", "stylesheets")
+  config.assets.paths << Rails.root.join("assets","bower_components","bootstrap-sass-official", "assets", "stylesheets")
+  config.assets.paths << Rails.root.join("assets","bower_components","bootstrap-sass-official", "assets","fonts")
 
   config.middleware.insert_before 0, Rack::Cors do
      allow do
